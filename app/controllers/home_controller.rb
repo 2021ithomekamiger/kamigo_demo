@@ -12,6 +12,15 @@ class HomeController < ApplicationController
     @profiles = params.dig(:payload, :joined, :members).map{|member| get_profile(member.dig(:userId)) }
   end
 
+  def test
+    user_id = params.dig(:source_user_id)
+    if user_id == "Ud479d7e568247ce0985bfd146a82c18f"
+      @message = "你是作者，可以進行操作"
+    else
+      @message = "你沒有權限進行操作"
+    end
+  end
+
   private
 
   def get_profile(user_id)
