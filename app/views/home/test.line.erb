@@ -1,6 +1,6 @@
 [
   {
     "type":"text",
-    "text":"<%= params.dig(:platform_type) %>"
+    "text":"payload: <%= j raw params.dig(:payload).to_json %>"
   }
 ]
