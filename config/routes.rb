@@ -33,6 +33,9 @@ Rails.application.routes.draw do
   # 測試用
   get "test", to: "home#test"
 
+  # 丟骰子
+  get "丟骰子", to: "home#draw_dice"
+
   # 查詢當下的使用者
   get "profile", to: "home#profile"
 

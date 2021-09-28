@@ -12,6 +12,17 @@ class HomeController < ApplicationController
     @profiles = params.dig(:payload, :joined, :members).map{|member| get_profile(member.dig(:userId)) }
   end
 
+  def draw_dice
+    user_id = params.dig(:source_user_id)
+    dices = [1, 2, 3, 4, 5, 6]
+
+    if user_id == "Ud479d7e568247ce0985bfd146a82c18f"
+      dices += [6, 6, 6, 6]
+    end
+
+    @message = "你擲出的骰子點數為：#{dices.sample}"
+  end
+
   def test
     user_id = params.dig(:source_user_id)
     if user_id == "Ud479d7e568247ce0985bfd146a82c18f"
