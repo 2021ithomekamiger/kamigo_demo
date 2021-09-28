@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get "memberJoined", to: "home#member_join"
 
   get "你好嗎" to: "home#greeting"
+
+  get "debug" to: "home#debug"
   # todo
   resources :todos
 
