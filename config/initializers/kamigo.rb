@@ -5,7 +5,7 @@ class Echo
   def process(event)
     {
       type: "text",
-      text: event.message
+      text: event.message.tr("嗎", "").tr("？", "！")
     }
   end
 end
