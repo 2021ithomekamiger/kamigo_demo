@@ -32,6 +32,13 @@ class HomeController < ApplicationController
     end
   end
 
+  def fun_slot1
+    part1 = ["頭1", "頭2", "頭3"].sample
+    part2 = ["中1", "中2", "中3"].sample
+    part3 = ["尾1", "尾2", "尾3"].sample
+    @message = "#{part1}#{part2}#{part3}"
+  end
+
   private
 
   def get_profile(user_id)

@@ -36,6 +36,8 @@ Rails.application.routes.draw do
   # 丟骰子
   get "丟骰子", to: "home#draw_dice"
 
+  get "出包理由", to: "home#fun_slot1"
+
   # 查詢當下的使用者
   get "profile", to: "home#profile"
 
