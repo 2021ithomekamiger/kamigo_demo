@@ -101,17 +101,6 @@ class VideosController < ApplicationController
     @keyword = params[:keyword]
 
     if @keyword.present?
-      filtered_videos = []
-      @videos.each do |video|
-        if video[:標題].include? @keyword
-          filtered_videos << video
-        end
-      end
-
-      @videos = filtered_videos
-    end
-
-    if @keyword.present?
       @videos.filter! do |video|
         video[:標題].include? @keyword
       end
