@@ -1,6 +1,6 @@
 {
   "type": "text",
   "text": "<%= @videos.map do |video| 
-    "標題: #{video[:標題]}"
-  end.join("\\n") %>"
+    "#{video[:標題]}\\n#{video[:影片網址]}"
+  end.join("\\n\\n") %>"
 }
