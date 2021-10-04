@@ -1,6 +1,14 @@
-{
-  "type": "text",
-  "text": "<%= @videos.map do |video| 
-    "#{video[:標題]}\\n#{video[:影片網址]}"
-  end.join("\\n\\n") %>"
-}
+[
+  <% if @keyword.present? %>
+    {
+      "type": "text",
+      "text": "您查詢的關鍵字為<%= @keyword %>，以下是符合條件的影片列表："
+    },
+  <% end %>
+  {
+    "type": "text",
+    "text": "<%= @videos.map do |video| 
+      "#{video[:標題]}\\n#{video[:影片網址]}"
+    end.join("\\n\\n") %>"
+  }
+]
