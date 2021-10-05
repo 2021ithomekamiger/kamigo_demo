@@ -17,7 +17,7 @@
     "contents": {
       "type": "carousel",
       "contents": [
-        <% @videos.first(12).each do |video| %>
+        <% @videos.each do |video| %>
         {
           "type": "bubble",
           "size": "micro",
@@ -54,7 +54,7 @@
             "spacing": "sm",
             "paddingAll": "13px"
           }
-        }
+        }<%= "," if video != @videos.last %>
         <% end %>
       ]
     }
