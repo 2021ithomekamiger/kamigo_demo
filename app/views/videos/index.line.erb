@@ -33,11 +33,18 @@
             "layout": "vertical",
             "contents": [
               {
-                "type": "text",
-                "text": "<%= video[:標題] %>",
-                "weight": "bold",
-                "size": "sm",
-                "wrap": true
+                "type": "box",
+                "layout": "vertical",
+                "contents": [
+                  {
+                    "type": "text",
+                    "text": "<%= video[:標題] %>",
+                    "weight": "bold",
+                    "size": "sm",
+                    "wrap": true
+                  }
+                ],
+                "height": "80px"
               },
               {
                 "type": "button",
