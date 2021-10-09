@@ -6,12 +6,6 @@
     }, 
   <% end %>
   {
-    "type": "text",
-    "text": "<%= @videos.map do |video| 
-      "#{video[:標題]}\\n#{video[:影片網址]}"
-    end.join("\\n\\n") %>"
-  },
-  {
     "type": "flex",
     "altText": "This is a Flex Message",
     "contents": {
@@ -65,5 +59,18 @@
         <% end %>
       ]
     }
-  }
+  },
+
+  <%= Kamiflex.json(self) do
+    alt_text "LINE Flex Message Showcase: Local Search"
+    carousel do
+      bubbles @videos, size: :micro do |video|
+        hero video[:縮圖網址], size: :full, aspectMode: "cover", aspectRatio: "320:213"
+        body spacing: :sm, paddingAll: "13px" do
+          text video[:標題], weight: :bold, size: :sm, wrap: true
+        end
+      end
+    end
+  end %>
+
 ]
