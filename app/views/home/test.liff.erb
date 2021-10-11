@@ -6,9 +6,11 @@
     }
   ])
   .then(() => {
-    console.log('message sent');
+    alert('message sent');
+    liff.closeWindow();
   })
   .catch((err) => {
-    console.log('error', err);
+    alert('error', err);
+    liff.closeWindow();
   });
 </script>
