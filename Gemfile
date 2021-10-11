@@ -70,3 +70,5 @@ gem "rqrcode"
 gem "devise", "~> 4.8"
 
 gem 'omniauth-line', git: 'https://github.com/etrex/omniauth-line.git'
+
+gem 'kamiliff', "0.32.0"
