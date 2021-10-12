@@ -32,6 +32,7 @@ Rails.application.routes.draw do
 
   # 測試用
   get "test", to: "home#test"
+  post "test", to: "home#show_test_response"
 
   # 丟骰子
   get "丟骰子", to: "home#draw_dice"
