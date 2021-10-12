@@ -1,6 +1,7 @@
 class HomeController < ApplicationController
   include Kamigo::Clients::LineClient
-
+  skip_before_action :verify_authenticity_token
+  
   # before_action :authenticate_user
   def share_bot
   end
