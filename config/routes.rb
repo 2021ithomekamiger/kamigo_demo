@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :learns
+  
   # 首頁
   root to: "home#index"
 
@@ -21,6 +21,10 @@ Rails.application.routes.draw do
 
   # todo
   resources :todos
+
+  # learn
+  resources :learns
+  get "學；(*keyword)；(*message)", to: "learns#create"
 
   # menu
   get "index", to: "home#index"

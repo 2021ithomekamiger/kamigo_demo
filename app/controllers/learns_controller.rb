@@ -78,7 +78,10 @@ class LearnsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def learn_params
-      params.require(:learn).permit(:keyword, :message)
+      {
+        keyword: params.dig(:keyword) || params.dig(:learn, :keyword),
+        message: params.dig(:message) || params.dig(:learn, :message),
+      } 
     end
 
     def debug_info
