@@ -10,30 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_07_12_165026) do
+ActiveRecord::Schema.define(version: 2021_10_14_183017) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "line_items", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "order_id"
-    t.string "name"
-    t.integer "quantity"
-    t.jsonb "product_attributes"
+  create_table "learns", force: :cascade do |t|
+    t.string "keyword"
+    t.string "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["order_id"], name: "index_line_items_on_order_id"
-    t.index ["user_id"], name: "index_line_items_on_user_id"
-  end
-
-  create_table "orders", force: :cascade do |t|
-    t.bigint "user_id"
-    t.string "state"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "name"
-    t.index ["user_id"], name: "index_orders_on_user_id"
   end
 
   create_table "todos", force: :cascade do |t|
@@ -58,7 +44,4 @@ ActiveRecord::Schema.define(version: 2021_07_12_165026) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "line_items", "orders"
-  add_foreign_key "line_items", "users"
-  add_foreign_key "orders", "users"
 end

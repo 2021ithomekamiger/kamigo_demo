@@ -1,0 +1,26 @@
+<%= raw(Kamiflex.build(self) do
+  bubble do
+    body do
+      horizontal_box do
+        text "🍔", flex: 0, action: message_action("/")
+        text "Learns", weight: "bold", margin: "sm"
+        text "new", align: "end", action: uri_action(liff_path(path: new_learn_path)), color: "#0000ee"
+      end
+      separator
+      if @learns.present?
+        vertical_box margin: "lg" do
+          horizontal_box margin: "lg" do
+            text "Keyword", weight: "bold"
+            text "action", align: "end"
+          end
+          horizontal_box @learns, margin: "lg" do |learn|
+            text learn.keyword, action: message_action("GET /learns/#{learn.id}")
+            text "❌", align: "end", action: message_action("DELETE /learns/#{learn.id}")
+          end
+        end
+      else
+        text "沒有目前內容", margin: "lg"
+      end
+    end
+  end
+end )%>

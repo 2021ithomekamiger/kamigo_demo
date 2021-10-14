@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :learns
   # 首頁
   root to: "home#index"
 

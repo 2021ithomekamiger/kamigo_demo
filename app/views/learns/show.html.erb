@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Keyword:</strong>
+  <%= @learn.keyword %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @learn.message %>
+</p>
+
+<%= link_to 'Edit', edit_learn_path(@learn) %> |
+<%= link_to 'Back', learns_path %>

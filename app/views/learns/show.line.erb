@@ -1,0 +1,25 @@
+<%= raw(Kamiflex.build(self) do
+  bubble do
+    body do
+      horizontal_box do
+        text "🍔", flex: 0, action: message_action("/")
+        text "Show Learn", weight: "bold", margin: "sm"
+        text "edit", align: "end", action: uri_action(liff_path(path: edit_learn_path(@learn) )), color: "#0000ee"
+      end
+      separator
+
+      horizontal_box margin: "md" do
+        vertical_box do
+          text "id", weight: "bold", margin: "xs"
+          text "keyword", weight: "bold", margin: "xs"
+          text "message", weight: "bold", margin: "xs"
+        end
+        vertical_box do
+          text @learn.id.blank? ? "-" : @learn.id.to_s, align: "end", margin: "xs"
+          text @learn.keyword.blank? ? "-" : @learn.keyword.to_s, align: "end", margin: "xs"
+          text @learn.message.blank? ? "-" : @learn.message.to_s, align: "end", margin: "xs"
+        end
+      end
+    end
+  end
+end )%>
