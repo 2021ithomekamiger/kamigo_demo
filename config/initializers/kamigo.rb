@@ -3,10 +3,18 @@ class Echo
   attr_accessor :form_authenticity_token
 
   def process(event)
-    {
-      type: "text",
-      text: event.message.tr("嗎", "").tr("？", "！")
-    }
+    learn = Learn.where(keyword: event.message).last
+    if learn.present?
+      {
+        type: "text",
+        text: learn.message
+      }  
+    else
+      {
+        type: "text",
+        text: event.message.tr("嗎", "").tr("？", "！")
+      }
+    end
   end
 end
 
